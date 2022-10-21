@@ -1,0 +1,46 @@
+{
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.iconTheme": "vs-minimal",
+  "diffEditor.renderSideBySide": true,
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "[typescriptreact, javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "explorer.confirmDelete": false,
+  "git.autofetch": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "javascript.format.enable": true,
+  "javascript.validate.enable": false,
+  "typescript.format.enable": true,
+  "editor.codeActionsOnSave": {
+    // For ESLint
+    "source.fixAll.eslint": true,
+    // For TSLint
+    "source.fixAll.tslint": true,
+    // For Stylelint
+    "source.fixAll.stylelint": true
+  },
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "eslint.validate": ["typescript", "typescriptreact"],
+  "[javascript, typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.tabs.enabled": true,
+  "timeline.excludeSources": [],
+  "[typescript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  },
+  "workbench.colorTheme": "Visual Studio Light",
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
