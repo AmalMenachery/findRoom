@@ -45,7 +45,7 @@ const GuestCounter: React.FC<GuestCounterProps> = ({
   }, [isAdult, childAges]);
 
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.flexOne}>
       <View style={styles.countContainer}>
         <View style={styles.label}>
           <Text>{label}</Text>

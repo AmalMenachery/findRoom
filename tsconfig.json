@@ -22,6 +22,7 @@
       "@svg/*": ["./assets/svg/*"],
       "@modules/*": ["./modules/*"],
       "@types/*": ["./src/types/*"],
+      "@constants/*": ["./src/constants/*"] ,
     },
     "typeRoots": ["./node_modules/@types"],
     "allowSyntheticDefaultImports": true,

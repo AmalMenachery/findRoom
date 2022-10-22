@@ -13,6 +13,7 @@ module.exports = {
           '@svg': './src/assets/svg',
           '@modules': './src/modules',
           '@types': './src/types',
+          '@constants': './src/constants',
         },
       },
     ],

@@ -36,7 +36,7 @@ const Counter: React.FC<Props> = ({
   const DecrementIcon = () => {
     const onPress = () => {
       if (count > minVal) {
-        setCount(count - 1);
+        setCount(count - 1, 'minus');
       }
     };
     return (

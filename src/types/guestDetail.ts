@@ -9,3 +9,5 @@ export type GuestDetail = {
   children: number;
   childrenAges?: childrenAge[];
 };
+
+export type GuestCounterAction = "plus" | "minus";
