@@ -18,8 +18,8 @@ const RoomCard: React.FC<RoomCardProps> = ({room, id, updateRoom, index}) => {
   const [adults, setAdultCount] = useState(2);
   const [children, setChildrenCount] = useState(0);
   useEffect(() => {
-    setAdultCount(room?.adults ? room?.adults : 2);
-    setChildrenCount(room?.children ? room?.children : 0);
+    setAdultCount(room.adults ? room.adults : 2);
+    setChildrenCount(room.children ? room.children : 0);
   }, [room]);
 
   const setAdults = _debounce((val: any, key: string) => {
@@ -36,7 +36,7 @@ const RoomCard: React.FC<RoomCardProps> = ({room, id, updateRoom, index}) => {
         ...room,
         children: val,
         childrenAges: [
-          ...(room?.childrenAges || []),
+          ...(room.childrenAges || []),
           {id: Math.floor(Math.random() * 10000), age: 0},
         ],
       });
@@ -44,7 +44,7 @@ const RoomCard: React.FC<RoomCardProps> = ({room, id, updateRoom, index}) => {
       updateRoom(id, {
         ...room,
         children: val,
-        childrenAges: room?.childrenAges.slice(1)|| [] ,
+        childrenAges: room.childrenAges.slice(1)|| [] ,
       });
     }
   }, 1000);
@@ -84,7 +84,7 @@ const RoomCard: React.FC<RoomCardProps> = ({room, id, updateRoom, index}) => {
         setCount={(val, key) => {
           setChildren(val, key);
         }}
-        childAges={room?.childrenAges}
+        childAges={room.childrenAges}
       />
     </View>
   );

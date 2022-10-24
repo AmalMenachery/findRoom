@@ -35,9 +35,9 @@ const GuestCounter: React.FC<GuestCounterProps> = ({
     } else {
       return (
         <View>
-          {childAges?.length > 0 &&
-            childAges?.map((child, index) => (
-              <ChildAge key={child?.id} age={child?.age} setAge={() => {}} />
+          {childAges && childAges.length > 0 &&
+            childAges.map((child, index) => (
+              <ChildAge key={child.id} age={child.age} setAge={() => {}} />
             ))}
         </View>
       );

@@ -1,0 +1,17 @@
+export type DateFormats =
+  | 'YYYY-MM-DD'
+  | 'DD/MM/YYYY'
+  | 'hh:mm A'
+  | 'DD MMM YYYY, HH:mm'
+  | 'DD MMM YYYY HH:mm'
+  | 'DD MMM YYYY, hh:mm A'
+  | 'DD MMM YYYY, ddd'
+  | 'DD MMM YYYY | ddd'
+  | 'dddd, DD MMM YYYY'
+  | 'DD MMM YYYY'
+  | 'HH:mm'
+  | 'DateObject'
+  | 'ddd'
+  | 'MM/DD/YYYY'
+  | 'MMM DD, YYYY'
+  |'DD MMM';

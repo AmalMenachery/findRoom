@@ -48,9 +48,9 @@ const ChildAge: React.FC<ChildAgeProps> = ({age = 1, setAge = () => {}}) => {
           }}
         />
       </View>
-      <View style={styles.closeIcon}>
+      {/* <View style={styles.closeIcon}>
         <IconButton icon={'close'} color={'red'} />
-      </View>
+      </View> */}
     </View>
   );
 };

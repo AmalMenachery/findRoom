@@ -4,7 +4,7 @@ import Button from "@atoms/button";
 import Header from "@atoms/header";
 import RoomCard from "@organisms/roomCard";
 import styles from "./guestPicker.styles";
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from "react-native-vector-icons/FontAwesome";
 import { GuestDetail } from "@types/guestDetail";
 
 type GuestPickerProps = {
@@ -24,11 +24,15 @@ export const GuestPicker: React.FC<GuestPickerProps> = ({
   const [guestCounter, setCounter] = useState(2);
   const SearchButtonLabel = useMemo(() => {
     let guestCount = 0;
-    guestPickerDetails?.forEach((room) => {
-      guestCount += room?.adults + room?.children;
-    });
+    if (guestPickerDetails) {
+      guestPickerDetails.forEach((room) => {
+        guestCount += room.adults + room.children;
+      });
+    }
     setCounter(guestCount);
-    return ` Search ${guestPickerDetails?.length} rooms • ${guestCount} guests`;
+    return ` Search ${
+      guestPickerDetails?.length || 0
+    } rooms • ${guestCount} guests`;
   }, [visible, guestPickerDetails]);
 
   useEffect(() => {
@@ -36,7 +40,7 @@ export const GuestPicker: React.FC<GuestPickerProps> = ({
   }, [guestDetails]);
 
   const addRoom = () => {
-    if (guestPickerDetails?.length > 7) {
+    if (guestPickerDetails && guestPickerDetails.length > 7) {
       return;
     } else {
       setDetails((prev) => [
@@ -50,12 +54,12 @@ export const GuestPicker: React.FC<GuestPickerProps> = ({
     if (!newRoomDetails) {
       // Remove Room
       setDetails((prev) => {
-        return [...prev].filter((room) => room?.id !== roomId);
+        return [...prev].filter((room) => room.id !== roomId);
       });
     } else {
       setDetails((prev) => {
-        return prev?.map((room) => {
-          if (room?.id === roomId) {
+        return prev.map((room) => {
+          if (room.id === roomId) {
             return { ...newRoomDetails };
           }
           return room;
@@ -70,7 +74,7 @@ export const GuestPicker: React.FC<GuestPickerProps> = ({
   };
 
   const addRoomButton = useMemo(() => {
-    if (guestPickerDetails?.length < 8) {
+    if (guestPickerDetails && guestPickerDetails.length < 8) {
       return (
         <View style={styles.btnContainer}>
           <Button
@@ -78,7 +82,7 @@ export const GuestPicker: React.FC<GuestPickerProps> = ({
             label="Add Room"
             btnStyle={styles.outlineBtn}
             labelStyle={styles.btnLabel}
-            isDisabled={guestPickerDetails?.length > 7}
+            isDisabled={guestPickerDetails.length > 7}
             onPress={() => addRoom()}
           />
         </View>
@@ -92,11 +96,11 @@ export const GuestPicker: React.FC<GuestPickerProps> = ({
       <View style={styles.container}>
         <ScrollView showsHorizontalScrollIndicator={false}>
           {guestPickerDetails &&
-            guestPickerDetails?.map((room, index) => (
+            guestPickerDetails.map((room, index) => (
               <RoomCard
-                id={room?.id}
+                id={room.id}
                 index={index}
-                key={room?.id}
+                key={room.id}
                 room={room}
                 updateRoom={(roomId, details) => updateRoom(roomId, details)}
               />
@@ -107,10 +111,9 @@ export const GuestPicker: React.FC<GuestPickerProps> = ({
           <Button
             label={SearchButtonLabel}
             icon={<Icon name={"search"} color={"#FFF"} size={18} />}
-           />
+          />
         </View>
       </View>
     </Modal>
   );
 };
-

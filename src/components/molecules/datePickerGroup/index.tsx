@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 
-import {TextInput} from 'react-native-paper';
-import styles from './datePickerGroup.styles';
+import { Button } from "react-native-paper";
+import styles from "./datePickerGroup.styles";
 
-import Calendar from '@svg/calendar.svg';
+import Calendar from "@svg/calendar.svg";
+import { DatePickerModal } from "react-native-paper-dates";
+import { customFormatDate } from "@utils/dateTime";
 
 //TODO : change to actual Date picker modal
 
@@ -29,26 +31,50 @@ const DatePickerGroup: React.FC<DatePickerGroupProps> = ({
   placeholderText,
   placeholderTextColor,
 }): JSX.Element => {
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
+  const [range, setRange] = React.useState<{
+    startDate: Date | undefined;
+    endDate: Date | undefined;
+  }>({ startDate: undefined, endDate: undefined });
+
+  const [open, setOpen] = React.useState(false);
+
+  const onDismiss = React.useCallback(() => {
+    setOpen(false);
+  }, [setOpen]);
+
+  const onConfirm = React.useCallback(
+    ({ startDate, endDate }) => {
+      setOpen(false);
+      setRange({ startDate, endDate });
+    },
+    [setOpen, setRange]
+  );
 
   return (
     <>
-      <TextInput
-        testID={testId}
-        placeholder={placeholderText ? placeholderText : ''}
-        dense
-        placeholderTextColor={placeholderTextColor}
+      <Button
+        onPress={() => setOpen(true)}
+        uppercase={false}
         mode="outlined"
-        style={[styles.defaultInputFieldStyle, inputFieldStyle]}
-        editable={true}
-        keyboardType={keyboardType || 'default'}
-        onChangeText={value => {
-          setSearchText(value);
-        }}
-        value={searchText}
-        outlineColor={'#A0BCDB'}
-        activeOutlineColor={'#0077FF'}
-        left={<TextInput.Icon name={Calendar} />}
+        icon={Calendar}
+        labelStyle={{ color: placeholderTextColor }}
+        style={styles.buttonStyle}
+        color={"#0077FF"}
+      >
+        {`${customFormatDate(range?.startDate, "DD MMM")} - ${customFormatDate(
+          range?.endDate,
+          "DD MMM"
+        )}`}
+      </Button>
+      <DatePickerModal
+        locale="en"
+        mode="range"
+        visible={open}
+        onDismiss={onDismiss}
+        startDate={range.startDate}
+        endDate={range.endDate}
+        onConfirm={onConfirm}
       />
     </>
   );

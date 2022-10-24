@@ -192,10 +192,10 @@ android {
             configureCMakeRelWithDebInfo.dependsOn(preReleaseBuild)
             configureCMakeDebug.dependsOn(preDebugBuild)
             reactNativeArchitectures().each { architecture ->
-                tasks.findByName("configureCMakeDebug[${architecture}]")?.configure {
+                tasks.findByName("configureCMakeDebug[${architecture}]").configure {
                     dependsOn("preDebugBuild")
                 }
-                tasks.findByName("configureCMakeRelWithDebInfo[${architecture}]")?.configure {
+                tasks.findByName("configureCMakeRelWithDebInfo[${architecture}]").configure {
                     dependsOn("preReleaseBuild")
                 }
             }

@@ -31,14 +31,15 @@ const GuestSearchBox: React.FC<GuestSearchBoxProps> = ({
           <DatePickerGroup
             testId={""}
             isSearching={false}
-            placeholderTextColor={""}
+            placeholderText={"Date Range"}
+            placeholderTextColor={"#8294b0"}
           />
         </View>
         <View style={styles.guestBox}>
           <GuestBox guestDetails={guestDetails} updateDetails={updateDetails} />
         </View>
       </View>
-      <View style={styles.button}>
+      <View>
         <Button label="Search" />
       </View>
     </View>

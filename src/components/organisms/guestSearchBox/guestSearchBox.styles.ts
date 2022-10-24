@@ -29,6 +29,6 @@ export default StyleSheet.create({
     paddingLeft: 8,
     justifyContent: 'center',
     backgroundColor: '#fff',
+    marginTop:-5,
   },
-  button: {},
 });

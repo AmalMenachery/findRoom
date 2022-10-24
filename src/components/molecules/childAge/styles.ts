@@ -9,13 +9,13 @@ export default StyleSheet.create({
   },
   label: {flex: 0.5},
   counterView: {
-    flex: 0.4,
+    flex: 0.45,
     justifyContent: 'flex-start',
     alignItems: 'flex-end',
     paddingVertical: 4,
   },
   dropdown4BtnStyle: {
-    width: '63%',
+    width: '70%',
     height: 35,
     borderRadius: 8,
     backgroundColor: '#FFF',

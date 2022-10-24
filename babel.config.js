@@ -14,6 +14,7 @@ module.exports = {
           '@modules': './src/modules',
           '@types': './src/types',
           '@constants': './src/constants',
+          '@utils': './src/utils',
         },
       },
     ],
