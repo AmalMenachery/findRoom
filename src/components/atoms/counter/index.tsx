@@ -4,14 +4,14 @@ import {View, Text} from 'react-native';
 import {IconButton} from 'react-native-paper';
 import styles from './styles';
 
-interface Props {
+interface CounterProps {
   count?: number;
   setCount: (number, key) => any;
   minVal: number;
   maxVal?: number;
 }
-
-const Counter: React.FC<Props> = ({
+// Counter component for updating the no:of guests
+const Counter: React.FC<CounterProps> = ({
   count = 1,
   setCount = () => {},
   minVal = 1,

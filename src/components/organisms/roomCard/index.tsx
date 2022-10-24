@@ -14,6 +14,8 @@ interface RoomCardProps {
   index: number;
 }
 
+// Component with Room Details (No:of Adults/Children and Children's Age if any)
+
 const RoomCard: React.FC<RoomCardProps> = ({room, id, updateRoom, index}) => {
   const [adults, setAdultCount] = useState(2);
   const [children, setChildrenCount] = useState(0);

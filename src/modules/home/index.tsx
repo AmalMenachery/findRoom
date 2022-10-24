@@ -9,6 +9,7 @@ import { GuestDetail } from "types/guestDetail";
 const Partners = ImgURLs.Partners;
 const HomeImg = ImgURLs.HomeImg;
 
+// Landing Home Page
 const Home = () => {
   const [guestDetails, setGuestDetails] = useState<GuestDetail[]>([
     { id: 0, adults: 2, children: 0 },
@@ -18,7 +19,7 @@ const Home = () => {
   };
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.flexOne}>
       <ImageBackground
         source={HomeImg}
         style={styles.imgBackDrop}

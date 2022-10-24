@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   container: {
@@ -7,12 +7,13 @@ export default StyleSheet.create({
   },
   imgBackDrop: {
     flex: 1,
-    justifyContent: "center"
+    justifyContent: "center",
     // backgroundColor: '#FFF',
   },
-  logo: {flex: 0.2},
-  title: {flex: 0.4},
-  headerText: {fontSize: 26, color: '#36424F'},
-  content: {flex: 0.4},
-  partners: {marginVertical: 16, width: '90%'},
+  flexOne: { flex: 1 },
+  logo: { flex: 0.2 },
+  title: { flex: 0.4 },
+  headerText: { fontSize: 26, color: "#36424F" },
+  content: { flex: 0.4 },
+  partners: { marginVertical: 16, width: "90%" },
 });

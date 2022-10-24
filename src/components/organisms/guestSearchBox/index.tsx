@@ -12,6 +12,8 @@ type GuestSearchBoxProps = {
   updateDetails: Function;
 };
 
+// Component with Destination Input, Date Range Input & Guest/Room Selection
+
 const GuestSearchBox: React.FC<GuestSearchBoxProps> = ({
   guestDetails,
   updateDetails,

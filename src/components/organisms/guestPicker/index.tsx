@@ -14,6 +14,10 @@ type GuestPickerProps = {
   updateDetails: Function;
 };
 
+// Guest Selection Modal with Room Details, Add Room Option & Search Button
+
+// TODO : Close the Modal on click of Search and initiate next action(search or updated home page)
+
 export const GuestPicker: React.FC<GuestPickerProps> = ({
   guestDetails,
   visible = false,

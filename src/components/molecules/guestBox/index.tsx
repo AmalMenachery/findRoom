@@ -9,13 +9,14 @@ import {View, Text} from 'react-native';
 import {GuestPicker} from '@organisms/guestPicker';
 import {GuestDetail} from '@types/guestDetail';
 
-//TODO : change to actual Date picker modal
 
 export type GuestBoxProps = {
   testId?: string;
   guestDetails?: GuestDetail[];
   updateDetails: Function;
 };
+
+// Shows the Guest Count and popups the room selections modal on click 
 
 const GuestBox: React.FC<GuestBoxProps> = ({
   testId,
@@ -32,7 +33,7 @@ const GuestBox: React.FC<GuestBoxProps> = ({
 
   return (
     <>
-      <View style={styles.container}>
+      <View style={styles.container} testID={testId}>
         <Button
           icon={Guests}
           onPress={() => {

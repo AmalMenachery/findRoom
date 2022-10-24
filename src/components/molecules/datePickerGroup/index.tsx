@@ -7,29 +7,15 @@ import Calendar from "@svg/calendar.svg";
 import { DatePickerModal } from "react-native-paper-dates";
 import { customFormatDate } from "@utils/dateTime";
 
-//TODO : change to actual Date picker modal
-
 export type DatePickerGroupProps = {
-  inputFieldStyle?: Object;
   testId: string;
-  iconName?: any;
-  color?: string;
-  keyboardType?: any;
-  search?: Function;
-  isSearching: boolean;
-  placeholderText?: string;
-  iconStyle?: object;
-  placeholderTextColor: string;
+  textColor: string;
   debounceTime?: number;
 };
 
 const DatePickerGroup: React.FC<DatePickerGroupProps> = ({
-  inputFieldStyle,
   testId,
-  keyboardType,
-  search,
-  placeholderText,
-  placeholderTextColor,
+  textColor,
 }): JSX.Element => {
   const [searchText, setSearchText] = useState("");
   const [range, setRange] = React.useState<{
@@ -54,11 +40,12 @@ const DatePickerGroup: React.FC<DatePickerGroupProps> = ({
   return (
     <>
       <Button
+        testID={testId}
         onPress={() => setOpen(true)}
         uppercase={false}
         mode="outlined"
         icon={Calendar}
-        labelStyle={{ color: placeholderTextColor }}
+        labelStyle={{ color: textColor }}
         style={styles.buttonStyle}
         color={"#0077FF"}
       >

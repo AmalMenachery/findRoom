@@ -1,7 +1,6 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {View, Text} from 'react-native';
-import {IconButton} from 'react-native-paper';
 import SelectDropdown from 'react-native-select-dropdown';
 import styles from './styles';
 
@@ -10,6 +9,7 @@ interface ChildAgeProps {
   setAge: (number, key) => any;
 }
 
+// Dropdown component for selecting the age of children
 const ChildAge: React.FC<ChildAgeProps> = ({age = 1, setAge = () => {}}) => {
   const ages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
 

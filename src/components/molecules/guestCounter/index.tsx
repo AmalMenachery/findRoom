@@ -3,7 +3,7 @@ import React, {useEffect, useMemo, useState} from 'react';
 import {View, Text} from 'react-native';
 import {childrenAge} from '@types/guestDetail';
 import Counter from '@atoms/counter';
-import ChildAge from '../childAge';
+import ChildAge from '@molecules/childAge';
 import styles from './styles';
 
 interface GuestCounterProps {
@@ -12,6 +12,8 @@ interface GuestCounterProps {
   isAdult?: boolean;
   childAges?: childrenAge[];
 }
+
+// Counter with Guest Type and Dropdown in case of the Children
 
 const GuestCounter: React.FC<GuestCounterProps> = ({
   count = 1,
